@@ -53,21 +53,8 @@ export default function DashboardPortfolio() {
             {isSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
           </button>
 
-          {/* User Profile Section */}
-          <div className="p-6 border-b border-slate-800/50">
-            <div className="flex items-center gap-4">
-              <img src="/memoji.png" alt="Ajay Nichani" className="w-12 h-12 rounded-full ring-2 ring-blue-500/50" />
-              {!isSidebarCollapsed && (
-                <div>
-                  <h2 className="text-white font-semibold text-lg">Ajay Nichani</h2>
-                  <p className="text-slate-400 text-sm">AI Product Manager</p>
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Navigation Links */}
-          <nav className="flex-1 p-4">
+          <nav className="flex-1 p-4 pt-8">
             <ul className="space-y-2">
               {navItems.map((item) => {
                 const Icon = item.icon
@@ -126,13 +113,13 @@ export default function DashboardPortfolio() {
             {/* Header */}
             <div className="mb-8">
               <h1 className="text-4xl font-bold text-white mb-2">
-                {activeSection === "overview" && "Dashboard Overview"}
+                {activeSection === "overview" && "Welcome"}
                 {activeSection === "case-studies" && "Case Studies"}
                 {activeSection === "ai-projects" && "AI Projects"}
                 {activeSection === "experience" && "Experience Timeline"}
               </h1>
               <p className="text-slate-400">
-                {activeSection === "overview" && "Welcome to your AI Product Management portfolio dashboard"}
+                {activeSection === "overview" && "Welcome to my AI Product Management portfolio."}
                 {activeSection === "case-studies" && "Explore detailed case studies and product outcomes"}
                 {activeSection === "ai-projects" && "AI-powered projects and prototypes"}
                 {activeSection === "experience" && "Professional journey and career milestones"}
@@ -216,16 +203,16 @@ export default function DashboardPortfolio() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <div className="text-3xl font-bold text-blue-400">$10M ARR</div>
-                      <div className="text-sm text-slate-400">Targeted Video Advertising</div>
+                      <div className="text-3xl font-bold text-blue-400">1000+</div>
+                      <div className="text-sm text-slate-400">Hours of Product Management</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-green-400">30% YoY</div>
-                      <div className="text-sm text-slate-400">Purchase Conversion</div>
+                      <div className="text-3xl font-bold text-green-400">$50M+</div>
+                      <div className="text-sm text-slate-400">in Revenue Generated</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-purple-400">40%</div>
-                      <div className="text-sm text-slate-400">Reduced Time-to-Hire</div>
+                      <div className="text-3xl font-bold text-purple-400">10+</div>
+                      <div className="text-sm text-slate-400">AI Products Shipped</div>
                     </div>
                   </CardContent>
                 </Card>
