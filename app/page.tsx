@@ -36,7 +36,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "core-competencies", "case-studies", "ai-projects", "experience", "contact"]
+      const sections = ["home", "expertise", "case-studies", "ai-projects", "experience", "contact"]
       const scrollPosition = window.scrollY + 100
       const newIsScrolled = window.scrollY > 50
       setIsScrolled(newIsScrolled)
@@ -95,14 +95,19 @@ export default function Portfolio() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "core-competencies", label: "About Me" },
+    { id: "expertise", label: "About Me" },
     { id: "case-studies", label: "Case Studies" },
     { id: "ai-projects", label: "AI Projects" },
     { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
   ]
 
-  const typewriterPhrases = ["Product Management", "Product Strategy", "Vibe-Coding", "Roadmap Creation & Execution"]
+  const typewriterPhrases = [
+    "Full-Stack Product Management",
+    "AI Product Strategy",
+    "Vibe-Coding",
+    "Roadmap Creation & Execution",
+  ]
 
   return (
     <div
@@ -217,7 +222,7 @@ export default function Portfolio() {
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-medium mb-4 transition-colors duration-500 text-slate-200 drop-shadow-md">
-            Full-Stack Product Manager
+            AI Product Management Leader
           </h2>
 
           <p className="text-lg md:text-xl mb-8 transition-colors duration-500 text-slate-300 max-w-3xl mx-auto drop-shadow-md">
@@ -246,74 +251,103 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="core-competencies" className="py-24 transition-colors duration-500 opacity-0 bg-background">
+      <section id="expertise" className="py-24 transition-colors duration-500 opacity-0 bg-background">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 transition-colors duration-500 text-foreground">
-              Core Competencies
+              Expertise & Strategic Skills
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Generative AI Card */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {/* AI Product Strategy Card */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group bg-card">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mb-6 mx-auto rounded-lg bg-primary/10 flex items-center justify-center">
                   <Lightbulb className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Generative AI</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• LLM Apps</li>
-                  <li>• AI-Powered Workflows</li>
-                  <li>• Experimentation</li>
-                </ul>
+                <h3 className="text-2xl font-semibold text-foreground">AI Product Strategy</h3>
               </CardContent>
             </Card>
 
-            {/* Product Management Card */}
+            {/* 0→1 Product Development Card */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group bg-card">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mb-6 mx-auto rounded-lg bg-accent/10 flex items-center justify-center">
                   <Briefcase className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Product Management</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Roadmaps</li>
-                  <li>• Discovery</li>
-                  <li>• Execution</li>
-                </ul>
+                <h3 className="text-2xl font-semibold text-foreground">0→1 Product Development</h3>
               </CardContent>
             </Card>
 
-            {/* Product Strategy Card */}
+            {/* Growth & Monetization Card */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group bg-card">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mb-6 mx-auto rounded-lg bg-primary/10 flex items-center justify-center">
                   <BarChart3 className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Product Strategy</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Growth</li>
-                  <li>• Go-to-Market Strategy</li>
-                  <li>• A/B Testing</li>
-                </ul>
+                <h3 className="text-2xl font-semibold text-foreground">Growth & Monetization</h3>
               </CardContent>
             </Card>
 
+            {/* Full-Stack Prototyping Card */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group bg-card">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mb-6 mx-auto rounded-lg bg-accent/10 flex items-center justify-center">
                   <Code className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Full-Stack Development</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Frontend (React/Next.js)</li>
-                  <li>• Backend (Node.js)</li>
-                  <li>• Databases (Supabase)</li>
-                </ul>
+                <h3 className="text-2xl font-semibold text-foreground">Full-Stack Prototyping</h3>
               </CardContent>
             </Card>
+          </div>
+
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-semibold mb-4 transition-colors duration-500 text-foreground">
+              Professional Toolkit
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Leveraging industry-leading tools to deliver exceptional product experiences
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/figma-logo.png" alt="Figma" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">Figma</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/notion-logo.png" alt="Notion" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">Notion</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/supabase-logo.png" alt="Supabase" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">Supabase</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/gemini-ai-logo.jpg" alt="Gemini" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">Gemini</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/openai-logo-inspired-abstract.png" alt="OpenAI" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">OpenAI</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                <img src="/jira-logo.png" alt="Jira" className="w-8 h-8" />
+              </div>
+              <span className="text-sm text-muted-foreground">Jira</span>
+            </div>
           </div>
         </div>
       </section>
@@ -356,7 +390,7 @@ export default function Portfolio() {
                     <h4 className="font-semibold mb-2">Impact</h4>
                     <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                       <li>
-                        Increased purchase conversion by <strong>30% YoY</strong>.
+                        Increased purchase conversion by <strong>30%</strong> YoY.
                       </li>
                       <li>
                         Drove a <strong>25% increase</strong> in weekly active users.
@@ -796,54 +830,6 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 transition-colors duration-500 opacity-0 bg-background">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 transition-colors duration-500 text-foreground">My Toolkit</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/figma-logo.png" alt="Figma" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">Figma</span>
-            </div>
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/notion-logo.png" alt="Notion" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">Notion</span>
-            </div>
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/supabase-logo.png" alt="Supabase" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">Supabase</span>
-            </div>
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/gemini-ai-logo.jpg" alt="Gemini" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">Gemini</span>
-            </div>
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/openai-logo-inspired-abstract.png" alt="OpenAI" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">OpenAI</span>
-            </div>
-            <div className="flex flex-col items-center group">
-              <div className="w-16 h-16 mb-2 rounded-lg bg-card shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <img src="/jira-logo.png" alt="Jira" className="w-8 h-8" />
-              </div>
-              <span className="text-sm text-muted-foreground">Jira</span>
             </div>
           </div>
         </div>
