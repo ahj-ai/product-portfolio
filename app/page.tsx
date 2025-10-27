@@ -371,6 +371,15 @@ export default function DashboardPortfolio() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-green-600/20 flex items-center justify-center">
+                        <BrainCircuit className="text-green-400" size={20} />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold">TutorOps</h4>
+                        <p className="text-sm text-slate-400">Operations platform for tutoring businesses</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
                       <img src="/mathstack-logo.png" alt="MathStack AI" className="w-10 h-10 rounded-lg" />
                       <div>
                         <h4 className="text-white font-semibold">MathStack AI</h4>
@@ -443,7 +452,7 @@ export default function DashboardPortfolio() {
                     <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                       <div className="flex-1 p-6 rounded-lg bg-gradient-to-br from-green-600/10 to-emerald-600/10 border border-green-500/30">
                         <div className="text-sm text-green-400 mb-2">2025 - Present</div>
-                        <h4 className="text-xl font-semibold text-white mb-1">Founder & Product Lead</h4>
+                        <h4 className="text-xl font-semibold text-white mb-1">Founder</h4>
                         <h5 className="text-green-400 mb-3">
                           <a
                             href="https://tutorops.app"
@@ -590,6 +599,30 @@ export default function DashboardPortfolio() {
             {/* AI Projects Section */}
             {activeSection === "ai-projects" && (
               <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl hover:border-green-500/50 transition-all duration-300">
+                  <CardContent className="p-8">
+                    <div className="w-16 h-16 mb-4 rounded-lg bg-green-600/20 flex items-center justify-center">
+                      <BrainCircuit className="text-green-400" size={32} />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white mb-4">TutorOps</h3>
+                    <p className="text-slate-400 mb-6">
+                      An operations platform for tutoring businesses that streamlines scheduling, payments, and business
+                      management with intelligent automation and analytics.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge className="bg-green-600/20 text-green-400 border-green-500/30">SaaS</Badge>
+                      <Badge className="bg-blue-600/20 text-blue-400 border-blue-500/30">Operations</Badge>
+                      <Badge className="bg-purple-600/20 text-purple-400 border-purple-500/30">Full-Stack</Badge>
+                    </div>
+                    <Button
+                      className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600"
+                      onClick={() => window.open("https://tutorops.app", "_blank")}
+                    >
+                      Visit Project
+                    </Button>
+                  </CardContent>
+                </Card>
+
                 <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl hover:border-blue-500/50 transition-all duration-300">
                   <CardContent className="p-8">
                     <img src="/mathstack-logo.png" alt="MathStack AI" className="w-16 h-16 mb-4 rounded-lg" />
@@ -644,7 +677,7 @@ export default function DashboardPortfolio() {
                     <div className="flex items-start gap-6">
                       <div className="flex-1">
                         <div className="text-sm text-green-400 mb-2">2025 - Present</div>
-                        <h3 className="text-2xl font-semibold text-white mb-2">Founder & Product Lead</h3>
+                        <h3 className="text-2xl font-semibold text-white mb-2">Founder</h3>
                         <h4 className="text-xl text-green-400 mb-4">
                           <a
                             href="https://tutorops.app"
