@@ -6,6 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import {
   Mail,
   LayoutGrid,
   Briefcase,
@@ -27,7 +35,11 @@ export default function DashboardPortfolio() {
   const [activeSection, setActiveSection] = useState("overview")
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+<<<<<<< HEAD
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+=======
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+>>>>>>> 6ca2a9acf8fcc19a19b47f0b46f2d83b532716b7
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
@@ -115,13 +127,84 @@ export default function DashboardPortfolio() {
               </div>
             )}
 
-            {/* Get in Touch Button */}
-            <Button
-              onClick={() => window.open("mailto:ajay@example.com", "_blank")}
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/30 transition-all duration-200"
-            >
-              {isSidebarCollapsed ? <Mail size={20} /> : "Get in Touch"}
-            </Button>
+            <Dialog open={isContactModalOpen} onOpenChange={setIsContactModalOpen}>
+              <DialogTrigger asChild>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/30 transition-all duration-200">
+                  {isSidebarCollapsed ? <Mail size={20} /> : "Get in Touch"}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="bg-slate-900 border-slate-800">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-white">Get in Touch</DialogTitle>
+                  <DialogDescription className="text-slate-400">
+                    Let's connect! Choose your preferred way to reach out.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4 mt-4">
+                  <a
+                    href="mailto:me@ajaynichani.com"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-200 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
+                      <Mail className="text-blue-400" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-white font-semibold">Email</h4>
+                      <p className="text-sm text-slate-400">me@ajaynichani.com</p>
+                    </div>
+                    <ExternalLink className="text-slate-500 group-hover:text-blue-400 transition-colors" size={20} />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/ajay-nichani/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-200 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
+                      <Linkedin className="text-blue-400" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-white font-semibold">LinkedIn</h4>
+                      <p className="text-sm text-slate-400">Connect professionally</p>
+                    </div>
+                    <ExternalLink className="text-slate-500 group-hover:text-blue-400 transition-colors" size={20} />
+                  </a>
+
+                  <a
+                    href="https://github.com/ahj-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-200 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                      <Github className="text-purple-400" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-white font-semibold">GitHub</h4>
+                      <p className="text-sm text-slate-400">Check out my code</p>
+                    </div>
+                    <ExternalLink className="text-slate-500 group-hover:text-purple-400 transition-colors" size={20} />
+                  </a>
+
+                  <a
+                    href="https://x.com/aHj_builds"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-200 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center group-hover:bg-cyan-600/30 transition-colors">
+                      <Twitter className="text-cyan-400" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-white font-semibold">Twitter</h4>
+                      <p className="text-sm text-slate-400">Follow my journey</p>
+                    </div>
+                    <ExternalLink className="text-slate-500 group-hover:text-cyan-400 transition-colors" size={20} />
+                  </a>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </aside>
 
@@ -163,7 +246,7 @@ export default function DashboardPortfolio() {
                         </p>
                         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6">
                           <Button
-                            onClick={() => window.open("mailto:ajay@example.com", "_blank")}
+                            onClick={() => window.open("mailto:me@ajaynichani.com", "_blank")}
                             className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/30"
                           >
                             <Mail className="mr-2 h-4 w-4" />
@@ -180,7 +263,7 @@ export default function DashboardPortfolio() {
                         </div>
                         <div className="flex items-center justify-center md:justify-start gap-4">
                           <a
-                            href="https://linkedin.com/in/ajaynichani"
+                            href="https://www.linkedin.com/in/ajay-nichani/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
@@ -189,7 +272,7 @@ export default function DashboardPortfolio() {
                             <span className="text-sm">LinkedIn</span>
                           </a>
                           <a
-                            href="https://github.com/ajaynichani"
+                            href="https://github.com/ahj-ai"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
@@ -198,7 +281,7 @@ export default function DashboardPortfolio() {
                             <span className="text-sm">GitHub</span>
                           </a>
                           <a
-                            href="https://twitter.com/ajaynichani"
+                            href="https://x.com/aHj_builds"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
@@ -317,6 +400,15 @@ export default function DashboardPortfolio() {
                   </CardHeader>
                   <CardContent className="space-y-4 p-4 sm:p-6">
                     <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-green-600/20 flex items-center justify-center">
+                        <BrainCircuit className="text-green-400" size={20} />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold">TutorOps</h4>
+                        <p className="text-sm text-slate-400">Operations platform for tutoring businesses</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
                       <img src="/mathstack-logo.png" alt="MathStack AI" className="w-10 h-10 rounded-lg" />
                       <div>
                         <h4 className="text-white font-semibold">MathStack AI</h4>
@@ -373,7 +465,7 @@ export default function DashboardPortfolio() {
                   </CardContent>
                   <CardFooter>
                     <Button
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white"
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/20"
                       onClick={() => setActiveSection("case-studies")}
                     >
                       Explore All Case Studies
@@ -385,8 +477,31 @@ export default function DashboardPortfolio() {
                   <CardHeader className="p-4 sm:p-6">
                     <CardTitle className="text-white">Career Experience</CardTitle>
                   </CardHeader>
+<<<<<<< HEAD
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center justify-center">
+=======
+                  <CardContent>
+                    <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                      <div className="flex-1 p-6 rounded-lg bg-gradient-to-br from-green-600/10 to-emerald-600/10 border border-green-500/30">
+                        <div className="text-sm text-green-400 mb-2">2025 - Present</div>
+                        <h4 className="text-xl font-semibold text-white mb-1">Founder</h4>
+                        <h5 className="text-green-400 mb-3">
+                          <a
+                            href="https://tutorops.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline inline-flex items-center gap-1"
+                          >
+                            TutorOps
+                            <ExternalLink size={14} />
+                          </a>
+                        </h5>
+                        <p className="text-sm text-slate-400">
+                          Building operations platform for tutoring businesses to streamline scheduling and payments
+                        </p>
+                      </div>
+>>>>>>> 6ca2a9acf8fcc19a19b47f0b46f2d83b532716b7
                       <div className="flex-1 p-6 rounded-lg bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/30">
                         <div className="text-sm text-blue-400 mb-2">2024 - Present</div>
                         <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">Founder</h4>
@@ -517,7 +632,35 @@ export default function DashboardPortfolio() {
 
             {/* AI Projects Section */}
             {activeSection === "ai-projects" && (
+<<<<<<< HEAD
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+=======
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl hover:border-green-500/50 transition-all duration-300">
+                  <CardContent className="p-8">
+                    <div className="w-16 h-16 mb-4 rounded-lg bg-green-600/20 flex items-center justify-center">
+                      <BrainCircuit className="text-green-400" size={32} />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white mb-4">TutorOps</h3>
+                    <p className="text-slate-400 mb-6">
+                      An operations platform for tutoring businesses that streamlines scheduling, payments, and business
+                      management with intelligent automation and analytics.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge className="bg-green-600/20 text-green-400 border-green-500/30">SaaS</Badge>
+                      <Badge className="bg-blue-600/20 text-blue-400 border-blue-500/30">Operations</Badge>
+                      <Badge className="bg-purple-600/20 text-purple-400 border-purple-500/30">Full-Stack</Badge>
+                    </div>
+                    <Button
+                      className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600"
+                      onClick={() => window.open("https://tutorops.app", "_blank")}
+                    >
+                      Visit Project
+                    </Button>
+                  </CardContent>
+                </Card>
+
+>>>>>>> 6ca2a9acf8fcc19a19b47f0b46f2d83b532716b7
                 <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl hover:border-blue-500/50 transition-all duration-300">
                   <CardContent className="p-4 sm:p-6 lg:p-8">
                     <img src="/mathstack-logo.png" alt="MathStack AI" className="w-16 h-16 mb-4 rounded-lg" />
@@ -569,6 +712,33 @@ export default function DashboardPortfolio() {
               <div className="max-w-5xl space-y-4 sm:space-y-6">
                 <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl">
                   <CardContent className="p-4 sm:p-6 lg:p-8">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-1">
+                        <div className="text-sm text-green-400 mb-2">2025 - Present</div>
+                        <h3 className="text-2xl font-semibold text-white mb-2">Founder</h3>
+                        <h4 className="text-xl text-green-400 mb-4">
+                          <a
+                            href="https://tutorops.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline inline-flex items-center gap-2"
+                          >
+                            TutorOps
+                            <ExternalLink size={16} />
+                          </a>
+                        </h4>
+                        <ul className="space-y-2 text-slate-400">
+                          <li>• Building operations platform for tutoring businesses</li>
+                          <li>• Streamlining scheduling, payments, and business management</li>
+                          <li>• Developing end-to-end product strategy and technical implementation</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-slate-800/50 bg-slate-900/50 backdrop-blur-xl">
+                  <CardContent className="p-8">
                     <div className="flex items-start gap-6">
                       <div className="flex-1">
                         <div className="text-sm text-blue-400 mb-2">2024 - Present</div>
